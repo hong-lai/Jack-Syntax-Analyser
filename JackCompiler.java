@@ -6,10 +6,10 @@ import java.io.Writer;
 
 import lib.*;
 
-public class JackComplier {
+public class JackCompiler {
     public static void main(String[] args) throws Exception {
         if (args.length != 1) {
-            System.out.println("Usage: JackComplier <input file or directory>");
+            System.out.println("Usage: JackCompiler <input file or directory>");
             return;
         }
 
