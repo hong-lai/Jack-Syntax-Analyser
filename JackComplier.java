@@ -6,10 +6,10 @@ import java.io.Writer;
 
 import lib.*;
 
-public class JackAnalyzer {
+public class JackComplier {
     public static void main(String[] args) throws Exception {
         if (args.length != 1) {
-            System.out.println("Usage: JackAnalyzer <input file or directory>");
+            System.out.println("Usage: JackComplier <input file or directory>");
             return;
         }
 
@@ -27,7 +27,7 @@ public class JackAnalyzer {
         }
 
         for (File jackFile : jackFiles) {
-            String outputFile = jackFile.getAbsolutePath().replaceAll("\\.jack$", ".xml");
+            String outputFile = jackFile.getAbsolutePath().replaceAll("\\.jack$", ".vm");
             try (
                     Reader input = new FileReader(jackFile);
                     Writer output = new FileWriter(outputFile)) {

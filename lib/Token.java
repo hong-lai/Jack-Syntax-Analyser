@@ -29,7 +29,12 @@ enum KeyWord {
     TRUE,
     FALSE,
     NULL,
-    THIS
+    THIS;
+
+    @Override
+    public String toString() {
+        return name().toLowerCase();
+    }
 }
 
 public class Token implements Cloneable {
