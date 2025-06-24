@@ -1,3 +1,5 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -29,8 +31,9 @@ public class JackCompiler {
         for (File jackFile : jackFiles) {
             String outputFile = jackFile.getAbsolutePath().replaceAll("\\.jack$", ".vm");
             try (
-                    Reader input = new FileReader(jackFile);
-                    Writer output = new FileWriter(outputFile)) {
+                    Reader input = new BufferedReader(new FileReader(jackFile));
+                    Writer output = new BufferedWriter(new FileWriter(outputFile))) {
+
                 CompilationEngine compilationEngine = new CompilationEngine(input, output);
                 compilationEngine.compileClass();
             }
